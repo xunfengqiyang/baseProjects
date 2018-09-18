@@ -1,1 +1,1 @@
-__all__ = ["loggerhandler", "loadfile"]
+__all__ = ["loggerhandler", "loadfile", "staticfile", "loadconf"]

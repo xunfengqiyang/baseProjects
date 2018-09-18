@@ -3,9 +3,10 @@ import traceback
 from flask import Flask, request, make_response
 from Utils.loggerhandler import mylogger
 from Utils.staticfile import ai_static_file
-
+from stencil import py_demo
 
 import json
+
 
 app = Flask(__name__)
 
@@ -13,6 +14,7 @@ app = Flask(__name__)
 log_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) + os.path.sep + 'log' + os.path.sep + 'startapp.log'
 logger = mylogger(os.path.splitext(os.path.basename(__file__))[0], log_path)
 
+app.register_blueprint(py_demo)
 app.register_blueprint(ai_static_file)
 
 
